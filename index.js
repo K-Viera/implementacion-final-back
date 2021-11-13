@@ -11,11 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({ origin: true }));
 
-app.get("/", function (req, res) {
-  res.status(200).send({
-    message: "GET Home route working fine!",
-  });
-});
+app.use("/", require("./src/calculatorRoute"));
 
 //start server
 app.listen(port, () => {
