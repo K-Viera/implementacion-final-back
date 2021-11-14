@@ -1,6 +1,7 @@
 const calculatorController = {};
 let { calculateFibonacci } = require("./calculators/fibonacci");
 let { calculateArea } = require("./calculators/triangulo");
+let { factorial } = require("./calculators/factorial");
 
 calculatorController.prueba = (req, res) => {
   res.status(200).send({
@@ -75,6 +76,22 @@ calculatorController.apcirculo = (req, res) => {
       });
     } else {
       res.status(400).json("Numero invalidos");
+    }
+  } else {
+    res.status(400).json("datos incompletos");
+  }
+};
+calculatorController.factorial = (req, res) => {
+  let { input } = req.body;
+  if (input) {
+    if (input >= 0) {
+      if (input <= 40000) {
+        res.status(200).json(factorial(input).toString());
+      } else {
+        res.status(400).json("numero demasiado grande para ser procesado");
+      }
+    } else {
+      res.status(400).json("valor erroneo");
     }
   } else {
     res.status(400).json("datos incompletos");
