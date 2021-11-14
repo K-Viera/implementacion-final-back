@@ -21,6 +21,9 @@ calculatorController.fibonacci = (req, res) => {
 
 calculatorController.aptriangulo = (req, res) => {
   let { lado1, lado2, lado3 } = req.body;
+  lado1 = parseInt(lado1, 10);
+  lado2 = parseInt(lado2, 10);
+  lado3 = parseInt(lado3, 10);
   if (lado1 > 0 && lado2 > 0 && lado3 > 0) {
     if (
       lado1 + lado2 > lado3 &&
