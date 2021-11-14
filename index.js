@@ -17,3 +17,5 @@ app.use("/", require("./src/calculatorRoute"));
 app.listen(port, () => {
   console.log("Listen in  the port ", port);
 });
+
+module.exports = app;
