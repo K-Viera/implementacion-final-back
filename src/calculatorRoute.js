@@ -13,4 +13,5 @@ route.post("/fibonacci", calculatorController.fibonacci);
 route.post("/triangulo", calculatorController.aptriangulo);
 route.post("/rectangulo", calculatorController.aprectangulo);
 route.post("/circulo", calculatorController.apcirculo);
+route.post("/factorial", calculatorController.factorial);
 module.exports = route;
