@@ -39,4 +39,18 @@ calculatorController.aptriangulo = (req, res) => {
   }
 };
 
+calculatorController.aprectangulo = (req, res) => {
+  let { lado1, lado2 } = req.body;
+  if (lado1 > 0 && lado2 > 0) {
+    res.status(200).json({
+      area: lado1 * lado2,
+      perimetro: lado1 * 2 + lado2 * 2,
+    });
+  } else {
+    res.status(400).json("Numeros invalidos");
+  }
+};
+calculatorController.apcirculo=(req,res)=>{
+    
+}
 module.exports = calculatorController;
