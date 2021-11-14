@@ -10,4 +10,5 @@ route.all("/", function (req, res, next) {
 
 route.get("/", calculatorController.prueba);
 route.post("/fibonacci", calculatorController.fibonacci);
+route.post("/triangulo", calculatorController.aptriangulo);
 module.exports = route;
