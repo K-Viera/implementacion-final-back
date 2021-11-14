@@ -50,7 +50,15 @@ calculatorController.aprectangulo = (req, res) => {
     res.status(400).json("Numeros invalidos");
   }
 };
-calculatorController.apcirculo=(req,res)=>{
-    
-}
+calculatorController.apcirculo = (req, res) => {
+  let { radio } = req.body;
+  if (radio > 0) {
+    res.status(200).json({
+      area: Math.PI * Math.pow(radio, 2),
+      perimetro: Math.PI * radio * 2,
+    });
+  } else {
+    res.status(400).json("Numero invalidos");
+  }
+};
 module.exports = calculatorController;
